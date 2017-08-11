@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui container main">
+    <div class="ui main purple huge header">Home</div>
+</div>
+
+<div id="blogs" class="container main">
+    
+        <div class="ui container purple medium header">Latest Posts</div>
+    <% blogs.forEach(function(blog){ %>
+    <div class="ui container raised segment">
+    <div>
+        <a href="/archive/<%= blog._id %>">
+            <h2><%=blog.title%></h2>
+        </a>
+        <a href="/archive/<%= blog._id %>" class="ui small image">
+            <img src="<%=blog.image%>">
+        </a>
+        <a href="/archive/<%=blog._id%>">
+            <span><%= blog.created %></span>
+        </a>
+    </div>
+    </div>
+    <% }) %>
+    </div>
+    
+
+</div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,18 @@
+<%include ./partials/header%>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%=blog.title%></div>
+        <div class="container segment">
+            <iframe width="560" height="315" src="<%=blog.video%>" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <span><%= blog.created %></span>
+        <div class="description">
+            <p><%= blog.content %></p>
+        </div>
+        <form action="/archive/<%=blog._id%>?_method=DELETE" method="POST">
+            <button class="ui red button">Balefire</button>
+        </form>
+    </div>
+</div>
+<%include ./partials/footer%>
